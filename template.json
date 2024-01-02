@@ -1,0 +1,111 @@
+{
+  "Actor": {
+    "types": ["character", "npc"],
+    "templates": {
+      "base": {
+        "health": {
+          "value": 10,
+          "min": 0,
+          "max": 10
+        },
+        "power": {
+          "value": 0,
+          "min": 0,
+          "max": 5
+        },
+        "biography": ""
+      }
+    },
+    "character": {
+      "templates": ["base"],
+      "attributes": {
+        "level": {
+          "value": 1
+        }
+      },
+      "abilities": {
+        "agi": {
+          "value": 1
+        },
+        "int": {
+          "value": 1
+        },
+        "mig": {
+          "value": 1
+        },
+        "per": {
+          "value": 1
+        },
+        "tou": {
+          "value": 1
+        },
+        "wil": {
+          "value": 1
+        }
+      },
+      "talents": {
+        "aca": {
+          "value": 0
+        },
+        "cha": {
+          "value": 0
+        },
+        "com": {
+          "value": 0
+        },
+        "cov": {
+          "value": 0
+        },
+        "inv": {
+          "value": 0
+        },
+        "med": {
+          "value": 0
+        },
+        "pro": {
+          "value": 0
+        },
+        "sci": {
+          "value": 0
+        },
+        "str": {
+          "value": 0
+        },
+        "sur": {
+          "value": 0
+        },
+        "tec": {
+          "value": 0
+        },
+        "veh": {
+          "value": 0
+        }
+      }
+    },
+    "npc": {
+      "templates": ["base"],
+      "cr": 0
+    }
+  },
+  "Item": {
+    "types": ["perk", "flaw", "power", "gear"],
+    "templates": {
+      "base": {
+        "description": ""
+      }
+    },
+    "item": {
+      "templates": ["base"],
+      "quantity": 1,
+      "weight": 0,
+      "formula": "d20 + @str + ceil(@lvl / 2)"
+    },
+    "feature": {
+      "templates": ["base"]
+    },
+    "spell": {
+      "templates": ["base"],
+      "spellLevel": 1
+    }
+  }
+}

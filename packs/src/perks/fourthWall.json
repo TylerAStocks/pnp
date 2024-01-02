@@ -1,0 +1,29 @@
+{
+    "name": "Fourth Wall",
+    "type": "perk",
+    "img": "icons/equipment/neck/necklace-runed-white-red.webp",
+    "system": {
+      "description": {
+        "value": "<h2>Cost: 6</h2><p>You believe you are a character in a comic book (and you might be right). You often break the fourth wall to interact directly with the audience. In game terms, any time you break the fourth wall and crack a joke that gets everyone at the table laughing, you earn 1 point of Resolve. But you can only do this once per scene. This Perk is best reserved for comedic or lighthearted games.</p>",
+        "chat": "",
+        "unidentified": ""
+      }
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 0,
+    "ownership": {
+      "default": 0
+    },
+    "flags": {},
+    "_id": "IgJkSnLiLJOWH7eN",
+    "_stats": {
+      "systemId": "pnp",
+      "systemVersion": "0.0.1",
+      "coreVersion": "10.303",
+      "createdTime": 1661787234264,
+      "modifiedTime": 1698857222487,
+      "lastModifiedBy": "TylerStocks"
+    },
+    "_key": "!items!IgJkSnLiLJOWH7eN"
+  }

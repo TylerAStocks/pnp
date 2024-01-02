@@ -1,0 +1,29 @@
+{
+    "name": "Fame",
+    "type": "perk",
+    "img": "icons/equipment/neck/necklace-runed-white-red.webp",
+    "system": {
+      "description": {
+        "value": "<h2>Cost: 3</h2><p>You are famous. People who recognize you generally react favorably, and some will fall all over themselves trying to get your attention, an autograph, or a selfie with you. If you have a secret identity, you must decide whether this Perk applies to your civilian identity or your heroic alter ego.</p>",
+        "chat": "",
+        "unidentified": ""
+      }
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 0,
+    "ownership": {
+      "default": 0
+    },
+    "flags": {},
+    "_id": "IgJkSnLiLJOWH7eM",
+    "_stats": {
+      "systemId": "pnp",
+      "systemVersion": "0.0.1",
+      "coreVersion": "10.303",
+      "createdTime": 1661787234264,
+      "modifiedTime": 1698857222487,
+      "lastModifiedBy": "TylerStocks"
+    },
+    "_key": "!items!IgJkSnLiLJOWH7eM"
+  }

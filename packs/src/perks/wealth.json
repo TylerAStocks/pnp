@@ -1,0 +1,29 @@
+{
+    "name": "Wealth",
+    "type": "perk",
+    "img": "icons/equipment/neck/necklace-runed-white-red.webp",
+    "system": {
+      "description": {
+        "value": "<h2>Cost: 3 Hero Points</h2><p>Wealth costs 3 Hero Points and means you are rich. You aren’t just comfortably well-off; you are truly wealthy. You can buy almost anything you want, legal or otherwise. You probably own several homes, have multiple vehicles, and employ at least a few domestic servants. If you happen to be a tech-based Hero, you can easily fund your extracurricular activities out of your own pocket.</p>",
+        "chat": "",
+        "unidentified": ""
+      }
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 0,
+    "ownership": {
+      "default": 0
+    },
+    "flags": {},
+    "_id": "IgJkSnLiLJOWH7eW",
+    "_stats": {
+      "systemId": "pnp",
+      "systemVersion": "0.0.1",
+      "coreVersion": "10.303",
+      "createdTime": 1661787234264,
+      "modifiedTime": 1698857222487,
+      "lastModifiedBy": "TylerStocks"
+    },
+    "_key": "!items!IgJkSnLiLJOWH7eW"
+  }

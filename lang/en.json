@@ -1,0 +1,51 @@
+{
+  "PNP.AbilityAgi": "Agility",
+  "PNP.AbilityInt": "Intellect",
+  "PNP.AbilityMig": "Might",
+  "PNP.AbilityPer": "Perception",
+  "PNP.AbilityTou": "Toughness",
+  "PNP.AbilityWil": "Willpower",
+
+  "PNP.AbilityAgiAbbr": "agi",
+  "PNP.AbilityIntAbbr": "int",
+  "PNP.AbilityMigAbbr": "mig",
+  "PNP.AbilityPerAbbr": "per",
+  "PNP.AbilityTouAbbr": "tou",
+  "PNP.AbilityWilAbbr": "wil",
+
+
+
+  "PNP.TalentAca": "Academics",
+  "PNP.TalentCha": "Charm",
+  "PNP.TalentCom": "Command",
+  "PNP.TalentCov": "Covert",
+  "PNP.TalentInv": "Investigation",
+  "PNP.TalentMed": "Medicine",
+  "PNP.TalentPro": "Professional",
+  "PNP.TalentaSci": "Science",
+  "PNP.TalentStr": "Streetwise",
+  "PNP.TalentSur": "Survival",
+  "PNP.TalentTec": "Technology",
+  "PNP.TalentVeh": "Vehicles",
+
+  "PNP.TalentAcaAbbr": "aca",
+  "PNP.TalentChaAbbr": "cha",
+  "PNP.TalentComAbbr": "com",
+  "PNP.TalentCovAbbr": "cov",
+  "PNP.TalentInvAbbr": "inv",
+  "PNP.TalentMedAbbr": "med",
+  "PNP.TalentProAbbr": "pro",
+  "PNP.TalentaSciAbbr": "sci",
+  "PNP.TalentStrAbbr": "str",
+  "PNP.TalentSurAbbr": "sur",
+  "PNP.TalentTecAbbr": "tec",
+  "PNP.TalentVehAbbr": "veh",
+
+  
+  "PNP.EffectCreate": "Create Effect",
+  "PNP.EffectToggle": "Toggle Effect",
+  "PNP.EffectEdit": "Edit Effect",
+  "PNP.EffectDelete": "Delete Effect",
+
+  "PNP.Add": "Add"
+}

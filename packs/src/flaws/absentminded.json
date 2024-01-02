@@ -1,0 +1,29 @@
+{
+    "name": "Absentminded",
+    "type": "flaw",
+    "img": "icons/equipment/neck/necklace-runed-white-red.webp",
+    "system": {
+      "description": {
+        "value": "<p>You tend to forget things. Usually, the things you forget aren’t all that important. But sometimes they are. Whenever that happens, you earn a point of Resolve.</p>",
+        "chat": "",
+        "unidentified": ""
+      }
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 0,
+    "ownership": {
+      "default": 0
+    },
+    "flags": {},
+    "_id": "v1gfyh9xk2a537ct",
+    "_stats": {
+      "systemId": "pnp",
+      "systemVersion": "0.0.1",
+      "coreVersion": "10.303",
+      "createdTime": 1661787234264,
+      "modifiedTime": 1698857222487,
+      "lastModifiedBy": "TylerStocks"
+    },
+    "_key": "!items!v1gfyh9xk2a537ct"
+  }
