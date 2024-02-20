@@ -8,7 +8,7 @@
 
     // Actor partials.
     "systems/pnp/templates/actor/parts/actor-features.html",
-    "systems/pnp/templates/actor/parts/actor-items.html",
+    "systems/pnp/templates/actor/parts/actor-powers.html",
     "systems/pnp/templates/actor/parts/actor-spells.html",
     "systems/pnp/templates/actor/parts/actor-effects.html",
   ]);

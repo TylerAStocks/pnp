@@ -1,3 +1,5 @@
+import { calculatePointsCost } from "../helpers/utils.mjs";
+
 /**
  * Extend the base Actor document by defining a custom roll data structure which is ideal for the Simple system.
  * @extends {Actor}
@@ -61,6 +63,9 @@ export class PnpActor extends Actor {
     const maxHealth = Math.ceil((toughness + adder2) / 2)
     systemData.health = {...systemData.health, max: maxHealth}
     console.log('HEALTH', systemData.health)
+
+    // calculate hero point cost
+    systemData.heroPoints = {value: calculatePointsCost(systemData)};
   }
 
   /**

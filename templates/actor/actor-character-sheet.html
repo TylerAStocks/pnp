@@ -43,6 +43,13 @@
           </div>
         </div>
 
+        <div class="resource flex-group-center">
+          <label for="system.heroPoints.value" class="resource-label">Hero Points</label>
+          <div class="resource-content flexrow flex-center flex-between">
+          <label name="system.heroPoints.value" data-dtype="Number">{{system.heroPoints.value}}</label>
+          </div>
+        </div>
+
       </div>
     </div>
   </header>
@@ -52,7 +59,7 @@
     {{!-- Default tab is specified in actor-sheet.mjs --}}
     <a class="item" data-tab="features">Features</a>
     <a class="item" data-tab="description">Description</a>
-    <a class="item" data-tab="items">Items</a>
+    <a class="item" data-tab="powers">Powers</a>
     <a class="item" data-tab="spells">Spells</a>
     <a class="item" data-tab="effects">Effects</a>
   </nav>
@@ -88,10 +95,10 @@
         </div>
 
         {{!-- For the main features list, span the right two columns --}}
-        <section class="main grid-span-2">
+<!--         <section class="main grid-span-2">
           {{!-- This is a Handlebars partial. They're stored in the `/parts` folder next to this sheet, and defined in module/helpers/templates.mjs --}}
           {{> "systems/pnp/templates/actor/parts/actor-features.html"}}
-        </section>
+        </section> -->
 
       </section>
     </div>
@@ -102,9 +109,9 @@
       {{editor system.biography target="system.biography" rollData=rollData button=true owner=owner editable=editable}}
     </div>
 
-    {{!-- Owned Items Tab --}}
-    <div class="tab items" data-group="primary" data-tab="items">
-       {{> "systems/pnp/templates/actor/parts/actor-items.html"}}
+    {{!-- Powers Tab --}}
+    <div class="tab powers" data-group="primary" data-tab="powers">
+       {{> "systems/pnp/templates/actor/parts/actor-powers.html"}}
     </div>
 
     {{!-- Owned Spells Tab --}}

@@ -94,7 +94,7 @@
         "description": ""
       }
     },
-    "item": {
+    "power": {
       "templates": ["base"],
       "quantity": 1,
       "weight": 0,

@@ -48,7 +48,7 @@
   <nav class="sheet-tabs tabs" data-group="primary">
     {{!-- Default tab is specified in actor-sheet.mjs --}}
     <a class="item" data-tab="description">Description</a>
-    <a class="item" data-tab="items">Items</a>
+    <a class="item" data-tab="powers">Powers</a>
     <a class="item" data-tab="effects">Effects</a>
   </nav>
 
@@ -61,9 +61,9 @@
       {{editor system.biography target="system.biography" rollData=rollData button=true owner=owner editable=editable}}
     </div>
 
-    {{!-- Owned Items Tab --}}
-    <div class="tab items" data-group="primary" data-tab="items">
-       {{> "systems/pnp/templates/actor/parts/actor-items.html"}}
+    {{!-- Powers Tab --}}
+    <div class="tab powers" data-group="primary" data-tab="powers">
+       {{> "systems/pnp/templates/actor/parts/actor-powers.html"}}
     </div>
 
     {{!-- Active Effects Tab --}}

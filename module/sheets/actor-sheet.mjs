@@ -89,19 +89,9 @@ export class PnpActorSheet extends ActorSheet {
     // Initialize containers.
     const gear = [];
     const features = [];
-    const spells = {
-      0: [],
-      1: [],
-      2: [],
-      3: [],
-      4: [],
-      5: [],
-      6: [],
-      7: [],
-      8: [],
-      9: []
-    };
+    const powers = [];
 
+    console.log('CONTEXT: ', context)
     // Iterate through items, allocating to containers
     for (let i of context.items) {
       i.img = i.img || DEFAULT_TOKEN;
@@ -113,18 +103,18 @@ export class PnpActorSheet extends ActorSheet {
       else if (i.type === 'feature') {
         features.push(i);
       }
-      // Append to spells.
-      else if (i.type === 'spell') {
-        if (i.system.spellLevel != undefined) {
-          spells[i.system.spellLevel].push(i);
-        }
+      // Append to powers.
+      else if (i.type === 'power') {
+        console.log('POWERRRR')
+        powers.push(i);
       }
     }
 
     // Assign and return
     context.gear = gear;
     context.features = features;
-    context.spells = spells;
+    context.powers = powers;
+    this.actor.powers = powers;
   }
 
   /* -------------------------------------------- */
@@ -134,9 +124,9 @@ export class PnpActorSheet extends ActorSheet {
     super.activateListeners(html);
 
     // Render the item sheet for viewing/editing prior to the editable check.
-    html.find('.item-edit').click(ev => {
-      const li = $(ev.currentTarget).parents(".item");
-      const item = this.actor.items.get(li.data("itemId"));
+    html.find('.power-edit').click(ev => {
+      const li = $(ev.currentTarget).parents(".power");
+      const item = this.actor.items.get(li.data("powerId"));
       item.sheet.render(true);
     });
 
@@ -145,12 +135,15 @@ export class PnpActorSheet extends ActorSheet {
     if (!this.isEditable) return;
 
     // Add Inventory Item
-    html.find('.item-create').click(this._onItemCreate.bind(this));
+    html.find('.power-create').click(this._onItemCreate.bind(this));
 
     // Delete Inventory Item
-    html.find('.item-delete').click(ev => {
-      const li = $(ev.currentTarget).parents(".item");
-      const item = this.actor.items.get(li.data("itemId"));
+    html.find('.power-delete').click(ev => {
+      console.log('This: ', this)
+      console.log('Actor: ', this.actor)
+      const li = $(ev.currentTarget).parents(".power");
+      console.log('li: ', li)
+      const item = this.actor.items.get(li.data("powerId"));
       item.delete();
       li.slideUp(200, () => this.render(false));
     });
@@ -164,7 +157,7 @@ export class PnpActorSheet extends ActorSheet {
     // Drag events for macros.
     if (this.actor.isOwner) {
       let handler = ev => this._onDragStart(ev);
-      html.find('li.item').each((i, li) => {
+      html.find('li.itrm').each((i, li) => {
         if (li.classList.contains("inventory-header")) return;
         li.setAttribute("draggable", true);
         li.addEventListener("dragstart", handler, false);
@@ -212,8 +205,8 @@ export class PnpActorSheet extends ActorSheet {
     // Handle item rolls.
     if (dataset.rollType) {
       if (dataset.rollType == 'item') {
-        const itemId = element.closest('.item').dataset.itemId;
-        const item = this.actor.items.get(itemId);
+        const itemId = element.closest('.power').dataset.powerId;
+        const item = this.actor.powers.get(itemId);
         if (item) return item.roll();
       }
     }
