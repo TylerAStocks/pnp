@@ -205,8 +205,8 @@ export class PnpActorSheet extends ActorSheet {
     // Handle item rolls.
     if (dataset.rollType) {
       if (dataset.rollType == 'item') {
-        const itemId = element.closest('.power').dataset.powerId;
-        const item = this.actor.powers.get(itemId);
+        const itemId = element.closest('.item').dataset.powerId;
+        const item = this.actor.items.get(itemId);
         if (item) return item.roll();
       }
     }
