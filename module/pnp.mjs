@@ -30,7 +30,7 @@ Hooks.once('init', async function() {
    * @type {String}
    */
   CONFIG.Combat.initiative = {
-    formula: "@attributes.edge.value",
+    formula: "(@system.edge.value)d1",
     decimals: 2
   };
 

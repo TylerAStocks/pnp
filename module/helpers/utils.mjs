@@ -11,7 +11,12 @@ export function calculatePointsCost(systemData) {
         total += systemData.talents[talent].value;
     })
     // add up power costs
-    // TODO: implement powers
+    console.log('systemData: ', systemData)
+    systemData.powers.forEach((power) => {
+        systemData.powers[systemData.powers.indexOf(power)].totalCost = (power.system.cost * power.system.rank + power.system.pros - Math.abs(power.system.cons))
+        power.system.totalCost = (power.system.cost * power.system.rank + power.system.pros - Math.abs(power.system.cons))
+        total += power.system.totalCost;
+    })
 
     // add Perks
     // TODO: implement perks

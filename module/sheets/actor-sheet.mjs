@@ -1,4 +1,5 @@
 import {onManageActiveEffect, prepareActiveEffectCategories} from "../helpers/effects.mjs";
+import { calculatePointsCost } from "../helpers/utils.mjs";
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
@@ -43,6 +44,28 @@ export class PnpActorSheet extends ActorSheet {
     if (actorData.type == 'character') {
       this._prepareItems(context);
       this._prepareCharacterData(context);
+
+      console.log('context: ', context)
+      context.system.powers = context.powers;
+
+      const systemData = context.system;
+
+      // calculate edge
+      const perception = systemData.abilities.per.value;
+      const adder = Math.max(systemData.abilities.agi.value, systemData.abilities.int.value)
+      systemData.edge = {value: perception + adder}
+      console.log('EDGE', systemData.edge)
+
+
+      // calculate health
+      const toughness = systemData.abilities.tou.value;
+      const adder2 = Math.max(systemData.abilities.mig.value, systemData.abilities.wil.value)
+      const maxHealth = Math.ceil((toughness + adder2) / 2)
+      systemData.health = {...systemData.health, max: maxHealth}
+      console.log('HEALTH', systemData.health)
+
+      // calculate hero point cost
+      systemData.heroPoints = {value: calculatePointsCost(systemData)};
     }
 
     // Prepare NPC data and items.
@@ -201,13 +224,14 @@ export class PnpActorSheet extends ActorSheet {
     event.preventDefault();
     const element = event.currentTarget;
     const dataset = element.dataset;
+    //console.log('onRoll: ', element, dataset)
 
-    // Handle item rolls.
+    // Handle power rolls.
     if (dataset.rollType) {
-      if (dataset.rollType == 'item') {
-        const itemId = element.closest('.item').dataset.powerId;
-        const item = this.actor.items.get(itemId);
-        if (item) return item.roll();
+      if (dataset.rollType == 'power') {
+        const powerId = element.closest('.power').dataset.powerId;
+        const power = this.actor.items.get(powerId);
+        if (power) return power.roll();
       }
     }
 
@@ -222,7 +246,7 @@ export class PnpActorSheet extends ActorSheet {
 
       roll.toMessage({
         speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-        flavor: `${label} <h2>${successes} successes acheieved!</h2>`,
+        flavor: `${label} <h1>${successes} successes!</h1>`,
         rollMode: game.settings.get('core', 'rollMode'),
       });
       return roll;

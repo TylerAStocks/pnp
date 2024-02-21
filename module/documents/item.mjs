@@ -56,11 +56,13 @@ export class PnpItem extends Item {
       // Invoke the roll and submit it to chat.
       const roll = new Roll(rollData.item.formula, rollData);
       // If you need to store the value first, uncomment the next line.
-      // let result = await roll.roll({async: true});
+      let result = await roll.roll({async: true});
+      let successes = roll.dice[0].results.reduce((acc, die) => (die.result === 6) ? acc+=2 : (die.result % 2 === 0) ? acc+=1 : acc, 0);
+
       roll.toMessage({
-        speaker: speaker,
-        rollMode: rollMode,
-        flavor: label,
+        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+        flavor: `${label} <h1>${successes} successes!</h1>`,
+        rollMode: game.settings.get('core', 'rollMode'),
       });
       return roll;
     }
